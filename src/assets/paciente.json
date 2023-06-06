@@ -1,0 +1,242 @@
+[
+  {
+    "dni": "76422812E",
+    "lora": "",
+    "rfid": "",
+    "firstName": "Olaya",
+    "lastName": "Bueno Villanueva",
+    "image": "assets/pacientes/paciente1.webp",
+    "contacts": [
+      {
+        "dni": "19431800C",
+        "firstName": "Matilda",
+        "lastName": "Villanueva Guillem",
+        "phone": "698985678"
+      },
+      {
+        "dni": "19431800C",
+        "firstName": "Federico",
+        "lastName": "Bueno Villanueva",
+        "phone": "698985678"
+      }
+    ],
+    "medications": [
+      {
+        "id": "679688",
+        "name": "Cinfatox Complex suspensión oral"
+      },
+      {
+        "id": " 901371",
+        "name": "Dolocatil 65mg/ml solución oral"
+      },
+      {
+        "id": "700669",
+        "name": "Furantoina 10 mg/ml suspensión oral"
+      },
+      {
+        "id": "965590",
+        "name": "Desenfriol C granulado efervescente"
+      }
+    ]
+  },
+  {
+    "dni": "75305452W",
+    "lora": "",
+    "rfid": "",
+    "firstName": "Isidoro",
+    "lastName": "Alamo",
+    "image": "assets/pacientes/paciente2.webp",
+    "contacts": [
+      {
+        "dni": "19431800C",
+        "firstName": "Matilda",
+        "lastName": "Villanueva Guillem",
+        "phone": "698985678"
+      },
+      {
+        "dni": "19431800C",
+        "firstName": "Federico",
+        "lastName": "Bueno Villanueva",
+        "phone": "698985678"
+      }
+    ],
+    "medications": [
+      {
+        "id": "679688",
+        "name": "Cinfatox Complex suspensión oral"
+      },
+      {
+        "id": " 901371",
+        "name": "Dolocatil 65mg/ml solución oral"
+      },
+      {
+        "id": "700669",
+        "name": "Furantoina 10 mg/ml suspensión oral"
+      },
+      {
+        "id": "965590",
+        "name": "Desenfriol C granulado efervescente"
+      }
+    ]
+  },
+  {
+    "dni": "81219405B",
+    "lora": "",
+    "rfid": "",
+    "firstName": "Francisco",
+    "lastName": "Nieto Mascarenas",
+    "image": "/assets/pacientes/paciente3.webp",
+    "contacts": [
+      {
+        "dni": "19431800C",
+        "firstName": "Matilda",
+        "lastName": "Villanueva Guillem",
+        "phone": "698985678"
+      },
+      {
+        "dni": "19431800C",
+        "firstName": "Federico",
+        "lastName": "Bueno Villanueva",
+        "phone": "698985678"
+      }
+    ],
+    "medications": [
+      {
+        "id": "679688",
+        "name": "Cinfatox Complex suspensión oral"
+      },
+      {
+        "id": " 901371",
+        "name": "Dolocatil 65mg/ml solución oral"
+      },
+      {
+        "id": "700669",
+        "name": "Furantoina 10 mg/ml suspensión oral"
+      },
+      {
+        "id": "965590",
+        "name": "Desenfriol C granulado efervescente"
+      }
+    ]
+  },
+  {
+    "dni": "96015627B",
+    "lora": "",
+    "rfid": "",
+    "firstName": "Olaya",
+    "lastName": "Nieto Mascarenas",
+    "image": "/assets/pacientes/paciente4.webp",
+    "contacts": [
+      {
+        "dni": "19431800C",
+        "firstName": "Matilda",
+        "lastName": "Villanueva Guillem",
+        "phone": "698985678"
+      },
+      {
+        "dni": "19431800C",
+        "firstName": "Federico",
+        "lastName": "Bueno Villanueva",
+        "phone": "698985678"
+      }
+    ],
+    "medications": [
+      {
+        "id": "679688",
+        "name": "Cinfatox Complex suspensión oral"
+      },
+      {
+        "id": " 901371",
+        "name": "Dolocatil 65mg/ml solución oral"
+      },
+      {
+        "id": "700669",
+        "name": "Furantoina 10 mg/ml suspensión oral"
+      },
+      {
+        "id": "965590",
+        "name": "Desenfriol C granulado efervescente"
+      }
+    ]
+  },
+  {
+    "dni": "00284990C",
+    "lora": "",
+    "rfid": "",
+    "firstName": "Olaya",
+    "lastName": "Nieto Mascarenas",
+    "image": "/assets/pacientes/paciente5.webp",
+    "contacts": [
+      {
+        "dni": "19431800C",
+        "firstName": "Matilda",
+        "lastName": "Villanueva Guillem",
+        "phone": "698985678"
+      },
+      {
+        "dni": "19431800C",
+        "firstName": "Federico",
+        "lastName": "Bueno Villanueva",
+        "phone": "698985678"
+      }
+    ],
+    "medications": [
+      {
+        "id": "679688",
+        "name": "Cinfatox Complex suspensión oral"
+      },
+      {
+        "id": " 901371",
+        "name": "Dolocatil 65mg/ml solución oral"
+      },
+      {
+        "id": "700669",
+        "name": "Furantoina 10 mg/ml suspensión oral"
+      },
+      {
+        "id": "965590",
+        "name": "Desenfriol C granulado efervescente"
+      }
+    ]
+  },
+  {
+    "dni": "09349494V",
+    "lora": "",
+    "rfid": "",
+    "firstName": "Olaya",
+    "lastName": "Nieto Mascarenas",
+    "image": "/assets/pacientes/paciente6.webp",
+    "contacts": [
+      {
+        "dni": "19431800C",
+        "firstName": "Matilda",
+        "lastName": "Villanueva Guillem",
+        "phone": "698985678"
+      },
+      {
+        "dni": "19431800C",
+        "firstName": "Federico",
+        "lastName": "Bueno Villanueva",
+        "phone": "698985678"
+      }
+    ],
+    "medications": [
+      {
+        "id": "679688",
+        "name": "Cinfatox Complex suspensión oral"
+      },
+      {
+        "id": " 901371",
+        "name": "Dolocatil 65mg/ml solución oral"
+      },
+      {
+        "id": "700669",
+        "name": "Furantoina 10 mg/ml suspensión oral"
+      },
+      {
+        "id": "965590",
+        "name": "Desenfriol C granulado efervescente"
+      }
+    ]
+  }
+]

@@ -1,0 +1,295 @@
+[
+  {
+    "dni": "76422812E",
+    "lora": "",
+    "rfid": "",
+    "firstName": "Yeray",
+    "lastName": "Bueno Villanueva",
+    "time": "12:39",
+    "exit": "Puerta principal",
+    "image": "assets/pacientes/paciente1.webp",
+    "route" : [
+      {"x": 42.02733,
+      "y": -4.53881},
+      {"x": 42.02795,
+      "y": -4.53704},
+      {"x": 42.02703,
+      "y": -4.53606},
+      {"x":42.02667,
+      "y": -4.535},
+      {"x":42.027,
+      "y": -4.53358},
+      {"x": 42.02625,
+      "y": -4.53219}
+    ],
+    "contacts": [
+      {
+        "dni": "19431800C",
+        "firstName": "Matilda",
+        "lastName": "Villanueva Guillem",
+        "phone": "698985678"
+      },
+      {
+        "dni": "19431800C",
+        "firstName": "Federico",
+        "lastName": "Bueno Villanueva",
+        "phone": "698985678"
+      }
+    ],
+    "indicaciones": [
+      "Precisa de nolotil",
+      "Sufre ataques de epilepsia"
+    ]
+  },
+  {
+    "dni": "75305452W",
+    "lora": "",
+    "rfid": "",
+    "firstName": "Isidoro",
+    "lastName": "Alamo García",
+    "time": "9:34",
+    "exit": "Puerta trasera",
+    "image": "assets/pacientes/paciente2.webp",
+    "route" : [
+      {
+        "x": 42.2020,
+        "y":-4.5313
+      },
+      {
+        "x": 42.2025,
+        "y":-4.5323
+      },
+      {
+        "x": 42.2026,
+        "y":-4.5315
+      },
+      {
+        "x": 42.2022,
+        "y":-4.5312
+      },
+      {
+        "x": 42.2040,
+        "y":-4.5336
+      }
+    ],
+    "contacts": [
+      {
+        "dni": "19431800C",
+        "firstName": "Matilda",
+        "lastName": "Villanueva Guillem",
+        "phone": "698985678"
+      },
+      {
+        "dni": "19431800C",
+        "firstName": "Federico",
+        "lastName": "Bueno Villanueva",
+        "phone": "698985678"
+      }
+    ],
+    "indicaciones": [
+      "Puede ser agresivo",
+      "Familia no suele coger el teléfono"
+    ]
+  },
+  {
+    "dni": "81219405B",
+    "lora": "",
+    "rfid": "",
+    "firstName": "Francisco",
+    "lastName": "Nieto Mascarenas",
+    "time": "9:37",
+    "exit": "Puerta baño 1",
+    "image": "/assets/pacientes/paciente3.webp",
+    "route" : [
+      {
+        "x": 42.2020,
+        "y":-4.5313
+      },
+      {
+        "x": 42.2025,
+        "y":-4.5323
+      },
+      {
+        "x": 42.2026,
+        "y":-4.5315
+      },
+      {
+        "x": 42.2022,
+        "y":-4.5312
+      },
+      {
+        "x": 42.2008,
+        "y":-4.5305
+      }
+    ],
+    "contacts": [
+      {
+        "dni": "19431800C",
+        "firstName": "Matilda",
+        "lastName": "Villanueva Guillem",
+        "phone": "698985678"
+      },
+      {
+        "dni": "19431800C",
+        "firstName": "Federico",
+        "lastName": "Bueno Villanueva",
+        "phone": "698985678"
+      }
+    ],
+    "indicaciones": [
+      "Necestia Furantoina 100mg",
+      "Persona tranquila"
+    ]
+
+  },
+  {
+    "dni": "96015627B",
+    "lora": "",
+    "rfid": "",
+    "firstName": "Olaya",
+    "lastName": "Nieto Mascarenas",
+    "time": "9:47",
+    "exit": "Puerta visitas",
+    "image": "/assets/pacientes/paciente4.webp",
+    "route" : [
+      {
+        "x": 42.2020,
+        "y":-4.5313
+      },
+      {
+        "x": 42.2025,
+        "y":-4.5323
+      },
+      {
+        "x": 42.2026,
+        "y":-4.5315
+      },
+      {
+        "x": 42.2022,
+        "y":-4.5312
+      },
+      {
+        "x": 42.2065,
+        "y":-4.5301
+      }
+    ],
+    "contacts": [
+      {
+        "dni": "19431800C",
+        "firstName": "Matilda",
+        "lastName": "Villanueva Guillem",
+        "phone": "698985678"
+      },
+      {
+        "dni": "19431800C",
+        "firstName": "Federico",
+        "lastName": "Bueno Villanueva",
+        "phone": "698985678"
+      }
+    ],
+    "indicaciones": [
+      "Necestia Cyntafox 65mg"
+
+    ]
+  },
+  {
+    "dni": "00284990C",
+    "lora": "",
+    "rfid": "",
+    "firstName": "Olaya",
+    "lastName": "Nieto Mascarenas",
+    "time": "9:53",
+    "exit": "Puerta visita",
+    "image": "/assets/pacientes/paciente5.webp",
+    "route" : [
+      {
+        "x": 42.2020,
+        "y":-4.5313
+      },
+      {
+        "x": 42.2025,
+        "y":-4.5323
+      },
+      {
+        "x": 42.2026,
+        "y":-4.5315
+      },
+      {
+        "x": 42.2022,
+        "y":-4.5312
+      },
+      {
+        "x": 42.2008,
+        "y":-4.5300
+      }
+    ],
+    "contacts": [
+      {
+        "dni": "19431800C",
+        "firstName": "Matilda",
+        "lastName": "Villanueva Guillem",
+        "phone": "698985678"
+      },
+      {
+        "dni": "19431800C",
+        "firstName": "Federico",
+        "lastName": "Bueno Villanueva",
+        "phone": "698985678"
+      }
+    ],
+    "indicaciones": [
+
+
+    ]
+  },
+  {
+    "dni": "09349494V",
+    "lora": "",
+    "rfid": "",
+    "firstName": "Olaya",
+    "lastName": "Nieto Mascarenas",
+    "time": "8:51",
+    "exit": "Puerta delantera",
+    "image": "/assets/pacientes/paciente6.webp",
+    "route" : [
+      {
+        "x": 42.2020,
+        "y":-4.5313
+      },
+      {
+        "x": 42.2025,
+        "y":-4.5323
+      },
+      {
+        "x": 42.2026,
+        "y":-4.5315
+      },
+      {
+        "x": 42.2022,
+        "y":-4.5312
+      },
+      {
+        "x": 42.2050,
+        "y":-4.5351
+      }
+    ],
+    "contacts": [
+      {
+        "dni": "19431800C",
+        "firstName": "Matilda",
+        "lastName": "Villanueva Guillem",
+        "phone": "698985678"
+      },
+      {
+        "dni": "19431800C",
+        "firstName": "Federico",
+        "lastName": "Bueno Villanueva",
+        "phone": "698985678"
+      }
+    ],
+    "indicaciones": [
+      "Persona muy agresiva"
+
+    ]
+  }
+]

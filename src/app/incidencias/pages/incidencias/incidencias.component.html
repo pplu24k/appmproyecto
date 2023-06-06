@@ -1,0 +1,30 @@
+
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Incidencias
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-list>
+
+    <ion-item *ngFor="let incidencia of incidencias"
+    routerLink="gestion/{{incidencia.dni}}"
+    >
+      <ion-label class="incidencia">
+        {{incidencia.firstName}}
+
+        {{incidencia.lastName}}
+        |
+        {{incidencia.time}}
+        |
+        {{incidencia.contacts[0].phone}}
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+
+</ion-content>

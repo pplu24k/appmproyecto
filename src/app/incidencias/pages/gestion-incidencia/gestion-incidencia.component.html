@@ -1,0 +1,57 @@
+
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/incidencias"></ion-back-button>
+    </ion-buttons>
+    <ion-title >
+      {{datosIncidencia?.firstName}}
+      {{datosIncidencia?.lastName}}
+
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+<div class="grid h-full">
+  <app-map *ngIf="trazoCargado" [trazo]="trazo"></app-map>
+  <section class="p-2 pl-6">
+
+    <h2>Hora de salida: <span class="text-red-700"> {{datosIncidencia?.time}}</span></h2>
+    <h2>Punto de salida: <span class="text-red-700"> {{datosIncidencia?.exit}}</span></h2>
+    <h2>Teléfono de contacto: <span class="text-cyan-700">{{datosIncidencia?.contacts[0].phone}}</span></h2>
+  </section>
+  <article class="flex justify-around">
+    <section class="p-2">
+      <img src="{{datosIncidencia?.image}}" alt="paciente" class="w-21 h-20">
+    </section>
+    <section>
+      <div>
+        <h1 class="text-center text-lg">Indicaciones:</h1>
+        <ul class="list-disc w-3/4 ml-auto"
+        *ngIf="datosIncidencia?.indicaciones.length>0"
+        >
+          <li *ngFor="let indicacion of datosIncidencia?.indicaciones" class="text-sm">
+            {{indicacion}}
+          </li>
+
+        </ul>
+        <h2 *ngIf="datosIncidencia?.indicaciones.length===0">
+          No hay indicaciones
+        </h2>
+      </div>
+    </section>
+  </article>
+
+  <div class="bg-green-200 flex items-center justify-center"
+  (click)="mostrarConfirmacion()">
+    <span class="text-xl">Finalizar incidencia</span>
+    <ion-icon name="checkbox-outline" class="w-14 h-14"></ion-icon>
+  </div>
+
+</div>
+
+
+
+</ion-content>

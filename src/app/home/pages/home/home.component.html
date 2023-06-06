@@ -1,0 +1,23 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Inicio
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <header>
+    <h1 class="p-4 text-center">
+      Mapa con salidas
+    </h1>
+  </header>
+
+  <div class="mapa-box">
+    <app-map
+    *ngIf="puntos"
+    [puntos]="puntos"></app-map>
+  </div>
+
+</ion-content>
