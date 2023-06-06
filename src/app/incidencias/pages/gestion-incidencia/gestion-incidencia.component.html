@@ -15,7 +15,9 @@
 <ion-content [fullscreen]="true">
 
 <div class="grid h-full">
-  <app-map *ngIf="trazoCargado" [trazo]="trazo"></app-map>
+  <div id="mapa-box">
+    <app-map *ngIf="trazoCargado" [trazo]="trazo"></app-map>
+  </div>
   <section class="p-2 pl-6">
 
     <h2>Hora de salida: <span class="text-red-700"> {{datosIncidencia?.time}}</span></h2>
