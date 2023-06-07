@@ -7,18 +7,18 @@
   </ion-toolbar>
 </ion-header>
 <ion-content [fullscreen]="true" >
-  <form class="w-3/4 m-auto mt-10">
-    <ion-item>
+  <form class="w-3/4 pt-5 m-auto" (submit)="doLogin($event)">
+    <ion-item lines="full">
       <ion-label position="floating">DNI</ion-label>
-      <ion-input type="text" required></ion-input>
+      <ion-input type="text" required name="dni" [(ngModel)]="user.dni"> </ion-input>
     </ion-item>
     <ion-item lines="full">
       <ion-label position="floating">Contraseña</ion-label>
-      <ion-input type="password" required></ion-input>
+      <ion-input type="password" required name="password" [(ngModel)]="user.password"></ion-input>
     </ion-item>
     <ion-row>
       <ion-col>
-        <ion-button type="submit" expand="block">Entrar</ion-button>
+        <ion-button type="submit" color="danger" expand="block">Sign In</ion-button>
 
       </ion-col>
     </ion-row>

@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { AuthRoutingModule } from './auth-routing.module';
 import { IonicModule } from '@ionic/angular';
 import { LoginComponent } from './pages/login/login.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { LoginComponent } from './pages/login/login.component';
   imports: [
     IonicModule,
     CommonModule,
-    AuthRoutingModule
+    AuthRoutingModule,
+    FormsModule
   ]
 })
 export class AuthModule { }
