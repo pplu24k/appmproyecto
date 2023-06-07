@@ -10,7 +10,7 @@ export class IncidenciasService {
   ) { }
 
   getIncidencias(){
-    return this.httpClient.get('/assets/incidencias.json')
+    return this.httpClient.get('http://localhost:8000/api/follow-ups')
   }
 
 

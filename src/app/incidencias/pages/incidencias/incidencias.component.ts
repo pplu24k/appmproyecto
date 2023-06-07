@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FollowUp } from 'src/app/core/models/follow-up';
 import { IncidenciasService } from 'src/app/core/services/incidencias/incidencias.service';
 @Component({
   selector: 'app-incidencias',
@@ -7,7 +8,7 @@ import { IncidenciasService } from 'src/app/core/services/incidencias/incidencia
 })
 export class IncidenciasComponent  implements OnInit {
 
-  incidencias: any
+  incidencias: FollowUp[] = []
 
   constructor(
     private incidenciasService: IncidenciasService
@@ -15,9 +16,9 @@ export class IncidenciasComponent  implements OnInit {
 
   ngOnInit() {
 
-    this.incidenciasService.getIncidencias().subscribe((data) => {
+    this.incidenciasService.getIncidencias().subscribe((data:any) => {
       console.log(data)
-      this.incidencias = data
+      this.incidencias = data.follow_ups
     })
   }
 

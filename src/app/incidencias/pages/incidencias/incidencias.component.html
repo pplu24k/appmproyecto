@@ -12,16 +12,16 @@
   <ion-list>
 
     <ion-item *ngFor="let incidencia of incidencias"
-    routerLink="gestion/{{incidencia.dni}}"
+    routerLink="gestion/{{incidencia.patient_dni}}"
     >
       <ion-label class="incidencia">
-        {{incidencia.firstName}}
+        {{incidencia.patient.nombre}}
 
-        {{incidencia.lastName}}
+        {{incidencia.patient.apellidos}}
         |
-        {{incidencia.time}}
+        {{incidencia.fecha}}
         |
-        {{incidencia.contacts[0].phone}}
+       <!--{{incidencia.contacts[0].phone}}--> 
       </ion-label>
     </ion-item>
   </ion-list>
