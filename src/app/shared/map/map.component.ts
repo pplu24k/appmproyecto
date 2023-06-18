@@ -42,24 +42,24 @@ export class MapComponent implements OnInit{
         this.map.remove(); 
        } 
 
-      this.map = new Map(this.mapContainer.nativeElement).setView([42.2020,-4.5313], 13);
+      this.map = new Map(this.mapContainer.nativeElement).setView([this.puntos[0].lat,this.puntos[0].lng], 13);
       tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 19,
       }).addTo(this.map);
       this.map.invalidateSize()
       for(let i=0;i<this.puntos.length;i++){
 
-        marker([this.puntos[i].route.at(-1).x,this.puntos[i].route.at(-1).y],
+        marker([this.puntos[i].lat,this.puntos[i].lng],
           {
             icon: icon({
-              iconUrl:this.puntos[i].image,
+              iconUrl:this.puntos[i].patient.ruta_foto,
               iconSize: [30,30]
             })
           }
           ).addTo(this.map).bindPopup(`
           <h2>
-          ${this.puntos[i].firstName}
-          ${this.puntos[i].lastName}
+          ${this.puntos[i].patient.nombre}
+          ${this.puntos[i].patient.apellidos}
           </h2>
           
           `)

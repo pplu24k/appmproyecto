@@ -10,7 +10,11 @@ export class IncidenciasService {
   ) { }
 
   getIncidencias(){
-    return this.httpClient.get('http://localhost:8000/api/follow-ups')
+    return this.httpClient.get('http://127.0.0.1:8000/api/incidences/in_progress')
+  }
+
+  getIncidencia(id:string){
+    return this.httpClient.get('http://127.0.0.1:8000/api/incidences/'+id)
   }
 
 

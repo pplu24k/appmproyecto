@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FollowUp } from 'src/app/core/models/follow-up';
+import { Incidence } from 'src/app/core/models/incidence';
 import { IncidenciasService } from 'src/app/core/services/incidencias/incidencias.service';
 @Component({
   selector: 'app-incidencias',
@@ -8,7 +9,7 @@ import { IncidenciasService } from 'src/app/core/services/incidencias/incidencia
 })
 export class IncidenciasComponent  implements OnInit {
 
-  incidencias: FollowUp[] = []
+  incidencias: Incidence[] = []
 
   constructor(
     private incidenciasService: IncidenciasService
@@ -18,7 +19,7 @@ export class IncidenciasComponent  implements OnInit {
 
     this.incidenciasService.getIncidencias().subscribe((data:any) => {
       console.log(data)
-      this.incidencias = data.follow_ups
+      this.incidencias = data.incidences
     })
   }
 

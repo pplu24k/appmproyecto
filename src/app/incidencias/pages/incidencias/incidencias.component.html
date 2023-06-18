@@ -9,22 +9,26 @@
 
 <ion-content [fullscreen]="true">
 
-  <ion-list>
+  <ion-list *ngIf="incidencias.length > 0; else cargando">
 
     <ion-item *ngFor="let incidencia of incidencias"
-    routerLink="gestion/{{incidencia.patient_dni}}"
+    routerLink="gestion/{{incidencia.patient.dni}}"
     >
       <ion-label class="incidencia">
         {{incidencia.patient.nombre}}
 
         {{incidencia.patient.apellidos}}
         |
-        {{incidencia.fecha}}
+        {{incidencia.fecha_inicio}}
         |
        <!--{{incidencia.contacts[0].phone}}--> 
       </ion-label>
     </ion-item>
   </ion-list>
+
+  <ng-template #cargando>
+    <h3>Cargando...</h3>
+  </ng-template>
 
 
 </ion-content>

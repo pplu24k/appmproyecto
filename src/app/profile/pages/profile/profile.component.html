@@ -10,29 +10,45 @@
 
 <ion-content [fullscreen]="true">
 
-  <div class="grid h-full p-5">
+  <div class="d-flex h-full p-5 justify-content-center align-items-center" *ngIf="!perfil" >
 
-    <div class="mt-6">
+
+    <img src="../../../../assets/imgs/loader.png" class="girar">
+
+
+  </div>
+
+  <div class="grid h-full p-5" *ngIf="perfil">
+
+    <div class="mt-6" >
       <h1 class="text-center text-xl p-4">
         <span>Usuario: </span>
-        <span>{{user}}</span>
+        <span>{{perfil.name}}</span>
       </h1>
       <h1 class="text-center text-xl p-4">
         <span>Email: </span>
-        <span>{{email}}</span>
+        <span>{{perfil.email}}</span>
+      </h1>
+      <h1 class="text-center text-xl p-4">
+        <span>Teléfono: </span>
+        <span>{{perfil.telefono}}</span>
       </h1>
     </div>
+    
     <div class="flex mt-auto mb-16 justify-center w-3/4 m-auto">
-      <ion-input placeholder="Nuevo teléfono" class="border-b-2 border-indigo-500 pb-0 "></ion-input>
-      <ion-button class="danger w-fit   text-xs">Cambiar</ion-button>
+      <ion-input placeholder="Nuevo teléfono" class="border-b-2 border-indigo-500 pb-0 " [(ngModel)]="telefono" ></ion-input>
+      <ion-button class="danger w-fit   text-xs" (click)="updateTelefono()">Cambiar</ion-button>
     </div>
+    
     <div class="flex mt-auto mb-16 justify-center w-3/4 m-auto">
-      <ion-input placeholder="Nuevo email" class="border-b-2 border-indigo-500 pb-0 "></ion-input>
-      <ion-button class="danger w-fit   text-xs">Cambiar</ion-button>
+      <ion-input placeholder="Nuevo email" class="border-b-2 border-indigo-500 pb-0 " [(ngModel)]="email" ></ion-input>
+      <ion-button class="danger w-fit   text-xs" (click)="updateEmail()">Cambiar</ion-button>
     </div>
+
     <div class="flex mt-auto">
       <ion-button color="danger" class=" w-1/2 m-auto mb-16" (click)="doLogout()">Cerrar sesion</ion-button>
     </div>
+
   </div>
 
 

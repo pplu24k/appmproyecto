@@ -30,7 +30,7 @@ export class LoginComponent  implements OnInit {
       
       console.log(data.access_token)
       sessionStorage.setItem("token",data.access_token)
-      
+      sessionStorage.setItem("user",this.user.dni)
       this.router.navigate(["/tabs/inicio"])
 
     })
