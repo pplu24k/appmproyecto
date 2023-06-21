@@ -60,13 +60,7 @@ export class MapComponent implements OnInit, OnDestroy{
   recargarRuta(){
     
     this.getdatos()
-    this.map.removeLayer(this.poly)
-    this.poly = new Polyline(this.trazo,{
-      color: 'green',
-      weight: 5
-    })
 
-    this.poly.addTo(this.map)
 
   }
 
@@ -81,6 +75,13 @@ export class MapComponent implements OnInit, OnDestroy{
       
         this.trazo.push(new LatLng(punto.latitud,punto.longitud))
       }
+      this.map.removeLayer(this.poly)
+      this.poly = new Polyline(this.trazo,{
+        color: 'green',
+        weight: 5
+      })
+  
+      this.poly.addTo(this.map)
     })
 
   }
