@@ -16,7 +16,7 @@
 
 <div class="grid h-full" *ngIf="datosIncidencia">
   <div id="mapa-box">
-    <app-map *ngIf="trazoCargado; else loader" [trazo]="trazo" [dni]="patientDatos.dni"></app-map>
+    <app-map *ngIf="trazoCargado; else loader" [trazo]="trazo" [id]="id"></app-map>
     <ng-template #loader>
       <span  class="loader" ></span>
     </ng-template>
@@ -52,13 +52,7 @@
       </div>
     </section>
   </article>
-  <!--
-  <div class="bg-green-200 flex items-center justify-center"
-  (click)="mostrarConfirmacion()">
-    <span class="text-xl">Finalizar incidencia</span>
-    <ion-icon name="checkbox-outline" class="w-14 h-14"></ion-icon>
-  </div>
--->
+
 </div>
 
 

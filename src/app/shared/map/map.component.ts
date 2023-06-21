@@ -31,13 +31,13 @@ export class MapComponent implements OnInit, OnDestroy{
   }
   @Input() puntos:any
   @Input() trazo:Array<LatLng> = []
-  @Input() dni:any
+  @Input() incidenciaId:any
   renderizado = false
 
   @ViewChild('map', {static: true})
   mapContainer!: ElementRef;
 
-  constructor(private patientsService: PatientsService) { }
+  constructor(private incidenciasService: IncidenciasService) { }
 
   cargarRuta(){
     if( this.trazo!=null && this.trazo.length > 0){
@@ -72,9 +72,9 @@ export class MapComponent implements OnInit, OnDestroy{
 
   getdatos(){
 
-    this.patientsService.getPatient(this.dni).subscribe((data:any)=> {
+    this.incidenciasService.getIncidencia(this.incidenciaId).subscribe((data:any)=> {
 
-      let recorrido = data.patient.incidences[0].recorrido_paciente
+      let recorrido = data.incidences.recorrido_paciente
       this.trazo = []
       for(let punto of recorrido){
 
@@ -146,7 +146,7 @@ export class MapComponent implements OnInit, OnDestroy{
     if(this.trazo.length >0){
       this.cargarRuta()
     }
-    if(this.dni){
+    if(this.incidenciaId){
       
       this.intervalSubscription = interval(5000).subscribe(() => {
 

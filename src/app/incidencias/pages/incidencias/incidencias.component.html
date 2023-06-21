@@ -12,7 +12,7 @@
   <ion-list *ngIf="incidencias && incidencias.length > 0; else status">
 
     <ion-item *ngFor="let incidencia of incidencias"
-    routerLink="gestion/{{incidencia.patient.dni}}"
+    routerLink="gestion/{{incidencia.id}}"
     >
       <ion-label class="incidencia">
         {{incidencia.patient.nombre}}

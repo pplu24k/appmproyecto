@@ -14,7 +14,8 @@ import { PatientsService } from 'src/app/core/services/patients/patients.service
 export class GestionIncidenciaComponent  implements OnInit  {
 
 
-  dni!:string;
+  id!:string;
+  
   fechaParseada!:string
   //trazo: Array<LatLng> = [new LatLng(42.2020,-4.5313),new LatLng(42.2025,-4.5313),new LatLng(42.2025,-4.5317),new LatLng(42.2035,-4.5310)]
   trazo : Array<LatLng> = []
@@ -24,7 +25,9 @@ export class GestionIncidenciaComponent  implements OnInit  {
   recorrido: any
   constructor(  private route: ActivatedRoute,
     //private alertController: AlertController,
-    private patientsService: PatientsService) { }
+    private patientsService: PatientsService,
+    private incidenciasService: IncidenciasService
+    ) { }
 
 
     recargarRuta(){
@@ -36,59 +39,41 @@ export class GestionIncidenciaComponent  implements OnInit  {
 
     ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
-      this.dni= params.get('code') as string;
+      this.id= params.get('code') as string;
 
     });
 
-    this.patientsService.getPatient(this.dni).subscribe((data:any) => {
-      this.datosIncidencia = data.patient.incidences[0]
-      this.patientDatos = data.patient
+    this.incidenciasService.getIncidencia(this.id).subscribe((data:any) => {
 
-      this.recorrido = data.patient.incidences[0].recorrido_paciente
-      this.parsearFecha()
+      console.log(data.incidences.patient.dni)
 
-    
-      
-      
+      this.recorrido = data.incidences.recorrido_paciente
+      this.recargarRuta()
+      this.trazoCargado = true
 
 
-        this.patientsService.getPatient(this.dni).subscribe((data:any) => {
+      this.patientsService.getPatient(data.incidences.patient.dni).subscribe((data:any) => {
+        this.datosIncidencia = data.patient.incidences[0]
+        this.patientDatos = data.patient
+  
+        
+        this.parsearFecha()
+  
+  
+        
+      })
 
-
-          this.recorrido = data.patient.incidences[0].recorrido_paciente
-          this.recargarRuta()
-          this.trazoCargado = true
-        })
-
-      
     })
 
 
 
 
-  }
-  
-  
-  /*
-  async mostrarConfirmacion(){
-    const alert = await this.alertController.create({
-      header: '¿Estás seguro de que deseas finalizar la incidencia?',
-      cssClass: 'custom-alert',
-      buttons: [
-        {
-          text: 'No',
-          cssClass: 'alert-button-cancel',
-        },
-        {
-          text: 'Si',
-          cssClass: 'alert-button-confirm',
-        },
-      ],
-    });
 
-    await alert.present();
+
   }
-*/
+  
+  
+
 
   parsearFecha(){
     let fechaStr = new Date(this.datosIncidencia.fecha_inicio)
