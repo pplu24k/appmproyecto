@@ -25,7 +25,10 @@
   <section class="p-2 pl-6">
 
     <h2>Hora de salida: <span class="text-red-700"> {{fechaParseada}}</span></h2>
-    <h2>Teléfono de contacto: <span class="text-cyan-700">{{patientDatos.contacts[0]?.telefono}}</span></h2>
+    <h2>Teléfono de contacto: 
+      <span class="text-cyan-700" *ngIf="patientDatos.contacts.length != 0 ">{{patientDatos.contacts[0]?.telefono}}</span>
+      <span class="text-cyan-700" *ngIf="patientDatos.contacts.length == 0 ">No hay teléfonos de contacto</span>
+    </h2>
   </section>
   <article class="flex justify-around">
     <section class="p-2">

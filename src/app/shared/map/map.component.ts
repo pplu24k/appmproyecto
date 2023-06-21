@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, Input, OnChanges, OnInit, SimpleChanges, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, Input, OnChanges, OnDestroy, OnInit, SimpleChanges, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 import { latLng, LatLng, MapOptions, marker, polyline, tileLayer ,Map, icon, Marker, Polyline} from 'leaflet';
@@ -16,7 +16,7 @@ import { Subscription, interval } from 'rxjs';
     LeafletModule
   ]
 })
-export class MapComponent implements OnInit{
+export class MapComponent implements OnInit, OnDestroy{
 
   private intervalSubscription!: Subscription;
   map!: Map

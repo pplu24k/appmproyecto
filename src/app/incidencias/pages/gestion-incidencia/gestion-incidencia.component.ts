@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, Input, OnInit } from '@angular/core';
+import { AfterViewInit, Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { AlertController } from '@ionic/angular';
 import { LatLng } from 'leaflet';
@@ -11,7 +11,7 @@ import { PatientsService } from 'src/app/core/services/patients/patients.service
   templateUrl: './gestion-incidencia.component.html',
   styleUrls: ['./gestion-incidencia.component.scss'],
 })
-export class GestionIncidenciaComponent  implements OnInit {
+export class GestionIncidenciaComponent  implements OnInit  {
 
 
   dni!:string;
@@ -25,6 +25,7 @@ export class GestionIncidenciaComponent  implements OnInit {
   constructor(  private route: ActivatedRoute,
     //private alertController: AlertController,
     private patientsService: PatientsService) { }
+
 
     recargarRuta(){
       for(let punto of this.recorrido){

@@ -7,6 +7,9 @@
   </ion-toolbar>
 </ion-header>
 <ion-content [fullscreen]="true" >
+  <div class="img-container">
+    <img src="assets/imgs/fundacionlogo.png" alt="logo">
+  </div>
   <form class="w-3/4 pt-5 m-auto" (submit)="doLogin($event)">
     <ion-item lines="full">
       <ion-label position="floating">DNI</ion-label>
@@ -18,9 +21,10 @@
     </ion-item>
     <ion-row>
       <ion-col>
-        <ion-button type="submit" color="danger" expand="block">Sign In</ion-button>
+        <ion-button type="submit" color="danger" expand="block">Entrar</ion-button>
 
       </ion-col>
     </ion-row>
   </form>
+  <div class="lds-ripple" *ngIf="esperando"><div></div><div></div></div>
 </ion-content>

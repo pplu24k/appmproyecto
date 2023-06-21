@@ -11,7 +11,7 @@ import { LoginService } from 'src/app/core/services/auth/login.service';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent  implements OnInit {
-
+  esperando = false;
   user = {
     dni: '',
     password: ''
@@ -28,6 +28,7 @@ export class LoginComponent  implements OnInit {
 
   doLogin(event:any) {
     event.preventDefault()
+    
    
 
     if(this.user.dni.length == 0 || this.user.password.length == 0 ){
@@ -35,7 +36,7 @@ export class LoginComponent  implements OnInit {
     }
     else{
 
-  
+      this.esperando = true
       this.loginService.doLogin(this.user)    .pipe(
         catchError((error: HttpErrorResponse) => {
           if (error.status === 401) {
@@ -43,10 +44,11 @@ export class LoginComponent  implements OnInit {
         
           }
           
-
+          this.esperando= false
           return of(null);
         })
       ).subscribe((data:any) => {
+        this.esperando=false
         if(data != null){
           console.log(data.access_token)
           sessionStorage.setItem("token",data.access_token)

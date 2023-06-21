@@ -13,6 +13,7 @@
   <div class="d-flex h-full p-5 justify-content-center align-items-center" *ngIf="!perfil" >
 
 
+
     <img src="../../../../assets/imgs/loader.png" class="girar">
 
 
@@ -20,16 +21,20 @@
 
   <div class="grid h-full p-5" *ngIf="perfil">
 
-    <div class="mt-6" >
-      <h1 class="text-center text-xl p-4">
+    <div class="mt-1">
+      <img src="assets/imgs/fundacionlogo.png" alt="logofundacionsancebrian">
+    </div>
+
+    <div class="mt-3" >
+      <h1 class="text-center text-xl p-2">
         <span>Usuario: </span>
         <span>{{perfil.name}}</span>
       </h1>
-      <h1 class="text-center text-xl p-4">
+      <h1 class="text-center text-xl p-2">
         <span>Email: </span>
         <span>{{perfil.email}}</span>
       </h1>
-      <h1 class="text-center text-xl p-4">
+      <h1 class="text-center text-xl p-2">
         <span>Teléfono: </span>
         <span>{{perfil.telefono}}</span>
       </h1>
