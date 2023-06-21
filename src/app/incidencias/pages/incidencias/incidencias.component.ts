@@ -23,4 +23,10 @@ export class IncidenciasComponent  implements OnInit {
     })
   }
 
+  parsearFecha(fecha: string){
+    let fechaStr = new Date(fecha)
+    return `${fechaStr.getHours()}:${fechaStr.getMinutes()} ${fechaStr.getDay()}/${fechaStr.getMonth()}/${fechaStr.getFullYear()}`
+
+  }
+
 }

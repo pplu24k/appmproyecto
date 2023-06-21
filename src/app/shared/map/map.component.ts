@@ -109,7 +109,7 @@ export class MapComponent implements OnInit, OnDestroy{
           marker([this.puntos[i].lat,this.puntos[i].lng],
             {
               icon: icon({
-                iconUrl:this.puntos[i]?.patient?.ruta_foto,
+                iconUrl:'assets/imgs/patienticon.png',
                 iconSize: [30,30]
               })
             }
