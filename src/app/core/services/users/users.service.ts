@@ -10,19 +10,19 @@ export class UsersService {
     private httpClient: HttpClient
   ) { }
 
-  getUser(dni: string){
+  getUser(){
 
-    return this.httpClient.get('http://localhost:8000/api/users/' + dni)
+    return this.httpClient.get('http://localhost:8000/api/user-profile')
   }
 
-  updateEmail(dni: string, email: string){
+  updateEmail(email:string){
 
-    return this.httpClient.put('http://localhost:8000/api/users/' + dni, {email})
+    return this.httpClient.put('http://localhost:8000/api/user-profile' ,{email})
   }
 
   updateTelefono(dni: string, telefono: string){
 
-    return this.httpClient.put('http://localhost:8000/api/users/' + dni, {telefono})
+    return this.httpClient.put('http://localhost:8000/api/user-profile', {telefono})
   }
 
 

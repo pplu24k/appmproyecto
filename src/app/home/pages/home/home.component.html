@@ -10,7 +10,8 @@
 
   <header>
     <h1 class="p-4 text-center">
-      Mapa con salidas
+      <span>Mapa con salidas</span>
+      <span *ngIf="this.incidencias?.length == 0"> (Sin salidas)</span>
     </h1>
   </header>
 

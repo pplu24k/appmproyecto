@@ -16,7 +16,7 @@
 
 <div class="grid h-full" *ngIf="datosIncidencia">
   <div id="mapa-box">
-    <app-map *ngIf="trazoCargado" [trazo]="trazo"></app-map>
+    <app-map *ngIf="trazoCargado" [trazo]="trazo" [dni]="patientDatos.dni"></app-map>
   </div>
   <section class="p-2 pl-6">
 

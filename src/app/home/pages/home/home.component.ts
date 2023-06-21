@@ -2,6 +2,7 @@ import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { IncidenciasService } from 'src/app/core/services/incidencias/incidencias.service';
 import { LatLng } from 'leaflet';
 import { Incidence } from 'src/app/core/models/incidence';
+import { doorCords } from 'src/app/core/consts/doorCoord';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -20,6 +21,9 @@ export class HomeComponent implements OnInit {
     this.incidenciasService.getIncidencias().subscribe((data:any) => {
 
       this.incidencias = data.incidences
+      if(this.incidencias.length != 0){
+
+      
       for(let incidencia of this.incidencias){
         this.puntos.push({
           lat: incidencia.recorrido_paciente[incidencia.recorrido_paciente.length-1].latitud,
@@ -28,7 +32,10 @@ export class HomeComponent implements OnInit {
       })
       }
       console.log(this.incidencias)
-
+    }
+    else{
+      this.puntos.push(doorCords)
+    }
     })
 
   }

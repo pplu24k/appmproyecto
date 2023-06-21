@@ -25,7 +25,7 @@ export class ProfileComponent  implements OnInit {
     ) { }
 
   ngOnInit() {
-    this.usersService.getUser(sessionStorage.getItem("user") as string).subscribe((data:any) => {
+    this.usersService.getUser().subscribe((data:any) => {
       console.log(data)
 
 
@@ -67,7 +67,7 @@ export class ProfileComponent  implements OnInit {
 
   updateEmail(){
     if(this.checkEmail(this.email)){
-      this.usersService.updateEmail(this.perfil.dni,this.email).subscribe((data) => {
+      this.usersService.updateEmail(this.email).subscribe((data) => {
         this.perfil.email = this.email
         this.mostrarConfirmacion('Email actualizado')
       })

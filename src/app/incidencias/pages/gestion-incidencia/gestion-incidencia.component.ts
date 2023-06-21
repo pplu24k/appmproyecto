@@ -21,11 +21,17 @@ export class GestionIncidenciaComponent  implements OnInit {
   trazoCargado = false
   datosIncidencia!: Incidence
   patientDatos: any
-
+  recorrido: any
   constructor(  private route: ActivatedRoute,
     //private alertController: AlertController,
     private patientsService: PatientsService) { }
 
+    recargarRuta(){
+      for(let punto of this.recorrido){
+        this.trazo.push(new LatLng(punto.latitud,punto.longitud))
+      }
+
+    }
 
     ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
@@ -37,18 +43,32 @@ export class GestionIncidenciaComponent  implements OnInit {
       this.datosIncidencia = data.patient.incidences[0]
       this.patientDatos = data.patient
       console.log(data)
-
+      this.recorrido = data.patient.incidences[0].recorrido_paciente
       this.parsearFecha()
-      for(let punto of this.datosIncidencia.recorrido_paciente){
-        this.trazo.push(new LatLng(punto.latitud,punto.longitud))
-      }
-      console.log(this.trazo)
-      this.trazoCargado = true
+
+    
+      
+      
+
+
+        this.patientsService.getPatient(this.dni).subscribe((data:any) => {
+
+          console.log("Recargando ruta")
+          this.recorrido = data.patient.incidences[0].recorrido_paciente
+          this.recargarRuta()
+          this.trazoCargado = true
+        })
+
       
     })
 
 
-  }/*
+
+
+  }
+  
+  
+  /*
   async mostrarConfirmacion(){
     const alert = await this.alertController.create({
       header: '¿Estás seguro de que deseas finalizar la incidencia?',
