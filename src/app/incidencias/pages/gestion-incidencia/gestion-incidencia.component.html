@@ -16,7 +16,11 @@
 
 <div class="grid h-full" *ngIf="datosIncidencia">
   <div id="mapa-box">
-    <app-map *ngIf="trazoCargado" [trazo]="trazo" [dni]="patientDatos.dni"></app-map>
+    <app-map *ngIf="trazoCargado; else loader" [trazo]="trazo" [dni]="patientDatos.dni"></app-map>
+    <ng-template #loader>
+      <span  class="loader" ></span>
+    </ng-template>
+    
   </div>
   <section class="p-2 pl-6">
 
@@ -25,7 +29,8 @@
   </section>
   <article class="flex justify-around">
     <section class="p-2">
-      <img src="{{patientDatos.ruta_foto}}" alt="paciente" class="w-21 h-20">
+      <img src="{{patientDatos.ruta_foto}}" alt="paciente" class="w-21 h-20" *ngIf="patientDatos.ruta_foto">
+      <img src="assets/imgs/patienticon.png" alt="paciente" class="w-21 h-20" *ngIf="!patientDatos.ruta_foto">
     </section>
     <section>
       <div>

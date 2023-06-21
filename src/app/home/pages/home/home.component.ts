@@ -22,7 +22,6 @@ export class HomeComponent implements OnInit {
 
       this.incidencias = data.incidences
       if(this.incidencias.length != 0){
-
       
       for(let incidencia of this.incidencias){
         this.puntos.push({
@@ -32,9 +31,6 @@ export class HomeComponent implements OnInit {
       })
       }
       console.log(this.incidencias)
-    }
-    else{
-      this.puntos.push(doorCords)
     }
     })
 

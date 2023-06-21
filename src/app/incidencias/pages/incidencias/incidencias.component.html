@@ -27,7 +27,7 @@
 
   <ng-template #status>
     <h3 *ngIf="!incidencias">Cargando...</h3>
-    <h3 *ngIf="incidencias.length == 0">No hay incidencias en curso</h3>
+    <h3 *ngIf="incidencias?.length == 0">No hay incidencias en curso</h3>
   </ng-template>
 
 

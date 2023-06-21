@@ -17,8 +17,16 @@
 
   <div class="mapa-box">
     <app-map
-    *ngIf="incidencias"
+    *ngIf="incidencias else loading"
     [puntos]="puntos"></app-map>
   </div>
+
+  <ng-template #loading>
+    <div class="d-flex h-60">
+        
+          <span class="loader"></span>
+        
+    </div>
+  </ng-template>
 
 </ion-content>

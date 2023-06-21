@@ -9,7 +9,7 @@ import { IncidenciasService } from 'src/app/core/services/incidencias/incidencia
 })
 export class IncidenciasComponent  implements OnInit {
 
-  incidencias: Incidence[] = []
+  incidencias!: Incidence[]
 
   constructor(
     private incidenciasService: IncidenciasService
