@@ -65,7 +65,7 @@ export class MapComponent implements OnInit, OnDestroy{
       color: 'green',
       weight: 5
     })
-    console.log(this.trazo)
+
     this.poly.addTo(this.map)
 
   }
@@ -77,7 +77,7 @@ export class MapComponent implements OnInit, OnDestroy{
       let recorrido = data.patient.incidences[0].recorrido_paciente
       this.trazo = []
       for(let punto of recorrido){
-        console.log(punto)
+
       
         this.trazo.push(new LatLng(punto.latitud,punto.longitud))
       }
@@ -87,16 +87,14 @@ export class MapComponent implements OnInit, OnDestroy{
 
   ngOnInit(): void {
 
-    console.log(this.mapContainer)
-  
-    console.log(this.map)
+
 
 
     if(this.puntos != null){
       if(this.map != undefined || this.map != null) {
         this.map.remove(); 
        } 
-       console.log(this.puntos)
+
        if(this.puntos.length == 0){
         this.puntos[0].lat = doorCords.lat
         this.puntos[0].lng = doorCords.lng
@@ -144,14 +142,14 @@ export class MapComponent implements OnInit, OnDestroy{
       }
       setTimeout(()=>{this.map.invalidateSize(true)},500)
     }
-    console.log(this.trazo)
+
     if(this.trazo.length >0){
       this.cargarRuta()
     }
     if(this.dni){
       
       this.intervalSubscription = interval(5000).subscribe(() => {
-        console.log("recargando");
+
         this.recargarRuta();
       });
 

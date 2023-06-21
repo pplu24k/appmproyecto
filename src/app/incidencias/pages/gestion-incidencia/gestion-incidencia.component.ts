@@ -43,7 +43,7 @@ export class GestionIncidenciaComponent  implements OnInit  {
     this.patientsService.getPatient(this.dni).subscribe((data:any) => {
       this.datosIncidencia = data.patient.incidences[0]
       this.patientDatos = data.patient
-      console.log(data)
+
       this.recorrido = data.patient.incidences[0].recorrido_paciente
       this.parsearFecha()
 
@@ -54,7 +54,7 @@ export class GestionIncidenciaComponent  implements OnInit  {
 
         this.patientsService.getPatient(this.dni).subscribe((data:any) => {
 
-          console.log("Recargando ruta")
+
           this.recorrido = data.patient.incidences[0].recorrido_paciente
           this.recargarRuta()
           this.trazoCargado = true

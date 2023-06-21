@@ -18,7 +18,7 @@ export class IncidenciasComponent  implements OnInit {
   ngOnInit() {
 
     this.incidenciasService.getIncidencias().subscribe((data:any) => {
-      console.log(data)
+
       this.incidencias = data.incidences
     })
   }
