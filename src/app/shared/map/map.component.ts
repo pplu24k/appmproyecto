@@ -107,7 +107,7 @@ export class MapComponent implements OnInit, OnDestroy {
         if(this.pacientMarker){
           this.map.removeLayer(this.pacientMarker)
         }
-        console.log(this.trazo[this.trazo.length-1])
+
         this.pacientMarker = marker(this.trazo[this.trazo.length-1], {
           icon: icon({
             iconUrl: 'assets/imgs/patienticon.png',
