@@ -12,47 +12,50 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content [fullscreen]="true" >
 
-<div class="grid h-full" *ngIf="datosIncidencia">
-  <div id="mapa-box">
-    <app-map *ngIf="trazoCargado; else loader" [trazo]="trazo" [incidenciaId]="id"></app-map>
-    <ng-template #loader>
-      <span  class="loader" ></span>
-    </ng-template>
-    
+<div class="grid h-full" >
+  <div *ngIf="datosIncidencia; else loader">
+    <div id="mapa-box">
+      <app-map *ngIf="trazoCargado" [trazo]="trazo" [incidenciaId]="id"></app-map>
+  
+      
+    </div>
+    <section class="p-2 pl-6 mt-2">
+  
+      <h2>Hora de salida: <span class="text-red-700"> {{fechaParseada}}</span></h2>
+      <h2>Teléfono de contacto: 
+        <span class="text-cyan-700" *ngIf="patientDatos.contacts.length != 0 ">{{patientDatos.contacts[0]?.telefono}}</span>
+        <span class="text-cyan-700" *ngIf="patientDatos.contacts.length == 0 ">No hay teléfonos de contacto</span>
+      </h2>
+    </section>
+    <article class="flex justify-around">
+      <section class="p-2">
+        <img src="assets/imgs/patienticon.png" alt="paciente" id="paciente" >
+      </section>
+      <section>
+        <div>
+          <h1 class="text-center text-lg">Medicamentos:</h1>
+     
+          <ul class="list-disc w-3/4 ml-auto"
+          >
+            <li *ngFor="let medication of patientDatos.medications" class="text-sm">
+              {{medication.nombre}}
+            </li>
+  
+          </ul>
+          <h2 *ngIf="patientDatos.medications.length===0">
+            No hay medicamentos asignados
+          </h2>
+     
+        </div>
+      </section>
+    </article>
   </div>
-  <section class="p-2 pl-6">
+  <ng-template #loader>
 
-    <h2>Hora de salida: <span class="text-red-700"> {{fechaParseada}}</span></h2>
-    <h2>Teléfono de contacto: 
-      <span class="text-cyan-700" *ngIf="patientDatos.contacts.length != 0 ">{{patientDatos.contacts[0]?.telefono}}</span>
-      <span class="text-cyan-700" *ngIf="patientDatos.contacts.length == 0 ">No hay teléfonos de contacto</span>
-    </h2>
-  </section>
-  <article class="flex justify-around">
-    <section class="p-2">
-      <img src="assets/imgs/patienticon.png" alt="paciente" class="w-21 h-20" >
-    </section>
-    <section>
-      <div>
-        <h1 class="text-center text-lg">Medicamentos:</h1>
-   
-        <ul class="list-disc w-3/4 ml-auto"
-        >
-          <li *ngFor="let medication of patientDatos.medications" class="text-sm">
-            {{medication.nombre}}
-          </li>
-
-        </ul>
-        <h2 *ngIf="patientDatos.medications.length===0">
-          No hay medicamentos asignados
-        </h2>
-   
-      </div>
-    </section>
-  </article>
-
+    <span  class="loader" ></span>
+  </ng-template>
 </div>
 
 

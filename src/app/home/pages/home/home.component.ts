@@ -3,6 +3,7 @@ import { IncidenciasService } from 'src/app/core/services/incidencias/incidencia
 import { LatLng } from 'leaflet';
 import { Incidence } from 'src/app/core/models/incidence';
 import { doorCords } from 'src/app/core/consts/doorCoord';
+import { interval } from 'rxjs';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -19,6 +20,8 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
 
     this.incidenciasService.getIncidencias().subscribe((data:any) => {
+
+
 
       this.incidencias = data.incidences
       if(this.incidencias.length != 0){

@@ -1,6 +1,8 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
+import { catchError, throwError } from 'rxjs';
 import { Profile } from 'src/app/core/models/profile';
 import { UsersService } from 'src/app/core/services/users/users.service';
 
@@ -49,7 +51,17 @@ export class ProfileComponent  implements OnInit {
   updateTelefono(){
 
     if(this.checkTelefono(this.telefono)){
-      this.usersService.updateTelefono(this.perfil.dni, this.telefono).subscribe((data) => {
+      this.usersService.updateTelefono(this.perfil.dni, this.telefono).pipe(
+        catchError((error: HttpErrorResponse) => {
+          if (error.error instanceof ErrorEvent) {
+    
+            console.error('Client error:', error.error.message);
+          } else {
+            console.error('Server error:', error.status, error.statusText);
+          }
+          this.mostrarConfirmacion("Error al actualizar el teléfono")
+          return throwError(() => new Error('Error'))
+        })).subscribe((data:any) => {
         this.perfil.telefono = this.telefono
         this.mostrarConfirmacion('Teléfono actualizado')
     })

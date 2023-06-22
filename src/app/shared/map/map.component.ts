@@ -22,6 +22,8 @@ import {
   icon,
   Marker,
   Polyline,
+  polygon,
+  LatLngExpression,
 } from 'leaflet';
 import { IncidenciasService } from 'src/app/core/services/incidencias/incidencias.service';
 import { PatientsService } from 'src/app/core/services/patients/patients.service';
@@ -174,6 +176,31 @@ export class MapComponent implements OnInit, OnDestroy {
         iconSize: [20, 20],
       }),
     }).addTo(this.map);
+
+    const area:LatLngExpression[] = [
+
+      
+      [42.013671, -4.539064],
+
+      [42.013382, -4.538817],
+
+      [42.013521, -4.538661],
+
+      [42.013699, -4.538807],
+
+      [42.01375, -4.538694],
+
+      [42.013914, -4.538791],
+
+      [42.013811, -4.539011],
+
+      [42.013726, -4.538952]
+
+  ];
+
+  const areaPolygon = polygon(area).addTo(this.map);
+
+  areaPolygon.bindPopup("Centro Grupo Fundación San Cebrián");
   }
 
   ngOnDestroy() {

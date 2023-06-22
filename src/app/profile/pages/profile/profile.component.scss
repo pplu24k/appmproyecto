@@ -13,3 +13,12 @@
         transform:rotate(360deg);
     }
 }
+.logo-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#logo{
+    max-width: 50vw;
+    max-height: 20vh;
+}
