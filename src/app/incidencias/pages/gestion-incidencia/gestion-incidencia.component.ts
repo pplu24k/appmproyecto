@@ -45,7 +45,6 @@ export class GestionIncidenciaComponent  implements OnInit  {
 
     this.incidenciasService.getIncidencia(this.id).subscribe((data:any) => {
 
-      console.log(data.incidences.patient.dni)
 
       this.recorrido = data.incidences.recorrido_paciente
       this.recargarRuta()

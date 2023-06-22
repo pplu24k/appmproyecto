@@ -95,7 +95,7 @@ export class MapComponent implements OnInit, OnDestroy {
         let recorrido = data.incidences.recorrido_paciente;
         this.trazo = [];
         for (let punto of recorrido) {
-          console.log(punto);
+
           this.trazo.push(new LatLng(punto.latitud, punto.longitud));
         }
         this.map.removeLayer(this.poly);

@@ -33,7 +33,7 @@ export class HomeComponent implements OnInit {
           patient: incidencia.patient
       })
       }
-      console.log(this.incidencias)
+ 
     }
     })
 
