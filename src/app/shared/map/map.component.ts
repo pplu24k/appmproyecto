@@ -57,7 +57,7 @@ export class MapComponent implements OnInit, OnDestroy {
 
   @ViewChild('map', { static: true })
   mapContainer!: ElementRef;
-
+  pacientMarker : any
   constructor(private incidenciasService: IncidenciasService) {}
 
   cargarRuta() {
@@ -66,7 +66,7 @@ export class MapComponent implements OnInit, OnDestroy {
         this.map.remove();
       }
       this.map = new Map(this.mapContainer.nativeElement).setView(
-        [this.trazo[0]?.lat?.valueOf(), this.trazo[0]?.lng?.valueOf()],
+        [this.trazo[this.trazo.length-1]?.lat?.valueOf(), this.trazo[this.trazo.length-1]?.lng?.valueOf()],
         25
       );
       tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(
@@ -78,15 +78,16 @@ export class MapComponent implements OnInit, OnDestroy {
       });
       this.poly.addTo(this.map);
 
+
       setTimeout(() => {
         this.map.invalidateSize(true);
       }, 500);
     }
   }
 
-  recargarRuta() {
-    this.getdatos();
-  }
+
+
+
 
   getdatos() {
     this.incidenciasService
@@ -103,8 +104,20 @@ export class MapComponent implements OnInit, OnDestroy {
           color: 'green',
           weight: 5,
         });
+        if(this.pacientMarker){
+          this.map.removeLayer(this.pacientMarker)
+        }
+        console.log(this.trazo[this.trazo.length-1])
+        this.pacientMarker = marker(this.trazo[this.trazo.length-1], {
+          icon: icon({
+            iconUrl: 'assets/imgs/patienticon.png',
+            iconSize: [30, 30],
+          })
+        })
+        
 
         this.poly.addTo(this.map);
+        this.pacientMarker.addTo(this.map)
       });
   }
 
@@ -166,9 +179,11 @@ export class MapComponent implements OnInit, OnDestroy {
     if (this.incidenciaId) {
 
       this.intervalSubscription = interval(5000).subscribe(() => {
-        this.recargarRuta();
+        this.getdatos();
       });
     }
+
+    
 
     marker(doorCords, {
       icon: icon({
